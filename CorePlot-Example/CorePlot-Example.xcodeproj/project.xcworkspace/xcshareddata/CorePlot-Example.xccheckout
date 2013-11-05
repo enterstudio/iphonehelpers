@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AB382C98-DE3E-4E8C-B74A-DC69CF5FFB9F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CorePlot-Example</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EFAEF0EE-8804-43FB-9315-4D8D421F2A0E</key>
+		<string>https://github.com/miketihonchik/iphonehelpers.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CorePlot-Example/CorePlot-Example.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EFAEF0EE-8804-43FB-9315-4D8D421F2A0E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/miketihonchik/iphonehelpers.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EFAEF0EE-8804-43FB-9315-4D8D421F2A0E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EFAEF0EE-8804-43FB-9315-4D8D421F2A0E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iphonehelpers</string>
+		</dict>
+	</array>
+</dict>
+</plist>
