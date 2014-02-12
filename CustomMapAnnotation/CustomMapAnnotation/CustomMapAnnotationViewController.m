@@ -10,6 +10,7 @@
 #import "CustomMapAnnotation.h"
 #import "CustomMapAnnotationView.h"
 #import "DefaultAnnotation.h"
+#import "LocationDataView.h"
 
 @interface CustomMapAnnotationViewController ()
 @property (nonatomic, retain) DefaultAnnotation *customAnnotation;
@@ -51,9 +52,10 @@
         if (!customMapAnnotationView) {
             customMapAnnotationView = [[CustomMapAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomMapAnnotation"];
             customMapAnnotationView.contentHeight = 78.0f;
-            UIImage *asynchronyLogo = [UIImage imageNamed:@"me.png"];
-            UIImageView *asynchronyLogoView = [[UIImageView alloc] initWithImage:asynchronyLogo];
-            asynchronyLogoView.frame = CGRectMake(5, 2, asynchronyLogoView.frame.size.width, asynchronyLogoView.frame.size.height);
+            //UIImage *asynchronyLogo = [UIImage imageNamed:@"me.png"];
+            //UIImageView *asynchronyLogoView = [[UIImageView alloc] initWithImage:asynchronyLogo];
+            //asynchronyLogoView.frame = CGRectMake(5, 2, asynchronyLogoView.frame.size.width, asynchronyLogoView.frame.size.height);
+            LocationDataView *asynchronyLogoView = [LocationDataView loadCustomView];
             [customMapAnnotationView.contentView addSubview:asynchronyLogoView];
         }
         customMapAnnotationView.mapView = self.mapView;

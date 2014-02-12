@@ -24,6 +24,10 @@
 		6FCF106C18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCF106A18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib */; };
 		6FCF106F18AA9B6300A53C5E /* CustomMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF106E18AA9B6300A53C5E /* CustomMapAnnotationView.m */; };
 		6FCF107818AABFC100A53C5E /* DefaultAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF107718AABFC100A53C5E /* DefaultAnnotation.m */; };
+		6FDE494C18AC0C830039D1C1 /* LocationDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDE494B18AC0C830039D1C1 /* LocationDataView.m */; };
+		6FDE494E18AC0C970039D1C1 /* LocationDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDE494D18AC0C970039D1C1 /* LocationDataView.xib */; };
+		6FDE495118AC120D0039D1C1 /* mapit.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FDE494F18AC120D0039D1C1 /* mapit.png */; };
+		6FDE495218AC120D0039D1C1 /* mapit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FDE495018AC120D0039D1C1 /* mapit@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,11 @@
 		6FCF106E18AA9B6300A53C5E /* CustomMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMapAnnotationView.m; sourceTree = "<group>"; };
 		6FCF107618AABFC100A53C5E /* DefaultAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAnnotation.h; sourceTree = "<group>"; };
 		6FCF107718AABFC100A53C5E /* DefaultAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAnnotation.m; sourceTree = "<group>"; };
+		6FDE494A18AC0C830039D1C1 /* LocationDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDataView.h; sourceTree = "<group>"; };
+		6FDE494B18AC0C830039D1C1 /* LocationDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataView.m; sourceTree = "<group>"; };
+		6FDE494D18AC0C970039D1C1 /* LocationDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationDataView.xib; sourceTree = "<group>"; };
+		6FDE494F18AC120D0039D1C1 /* mapit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapit.png; sourceTree = "<group>"; };
+		6FDE495018AC120D0039D1C1 /* mapit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapit@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +99,8 @@
 		6F01B5BE18ABF5B300EB1823 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6FDE494F18AC120D0039D1C1 /* mapit.png */,
+				6FDE495018AC120D0039D1C1 /* mapit@2x.png */,
 				6F01B5BF18ABF61300EB1823 /* me.png */,
 				6F01B5C018ABF61300EB1823 /* me@2x.png */,
 			);
@@ -161,6 +172,8 @@
 				6FCF106918AA92BB00A53C5E /* CustomMapAnnotationViewController.m */,
 				6FCF106D18AA9B6300A53C5E /* CustomMapAnnotationView.h */,
 				6FCF106E18AA9B6300A53C5E /* CustomMapAnnotationView.m */,
+				6FDE494A18AC0C830039D1C1 /* LocationDataView.h */,
+				6FDE494B18AC0C830039D1C1 /* LocationDataView.m */,
 			);
 			name = custom;
 			sourceTree = "<group>";
@@ -169,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				6FCF106A18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib */,
+				6FDE494D18AC0C970039D1C1 /* LocationDataView.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -250,8 +264,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FCF106C18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib in Resources */,
+				6FDE494E18AC0C970039D1C1 /* LocationDataView.xib in Resources */,
 				6FCF103E18AA84AE00A53C5E /* Images.xcassets in Resources */,
 				6FCF103018AA84AE00A53C5E /* InfoPlist.strings in Resources */,
+				6FDE495218AC120D0039D1C1 /* mapit@2x.png in Resources */,
+				6FDE495118AC120D0039D1C1 /* mapit.png in Resources */,
 				6F01B5C118ABF61300EB1823 /* me.png in Resources */,
 				6F01B5C218ABF61300EB1823 /* me@2x.png in Resources */,
 			);
@@ -271,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FDE494C18AC0C830039D1C1 /* LocationDataView.m in Sources */,
 				6FCF107818AABFC100A53C5E /* DefaultAnnotation.m in Sources */,
 				6FCF105D18AA8BF200A53C5E /* CustomMapAnnotation.m in Sources */,
 				6FCF106F18AA9B6300A53C5E /* CustomMapAnnotationView.m in Sources */,
