@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F01B5C118ABF61300EB1823 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F01B5BF18ABF61300EB1823 /* me.png */; };
+		6F01B5C218ABF61300EB1823 /* me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F01B5C018ABF61300EB1823 /* me@2x.png */; };
+		6FCF102618AA84AE00A53C5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102518AA84AE00A53C5E /* Foundation.framework */; };
+		6FCF102818AA84AE00A53C5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102718AA84AE00A53C5E /* CoreGraphics.framework */; };
+		6FCF102A18AA84AE00A53C5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102918AA84AE00A53C5E /* UIKit.framework */; };
+		6FCF103018AA84AE00A53C5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FCF102E18AA84AE00A53C5E /* InfoPlist.strings */; };
+		6FCF103218AA84AE00A53C5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF103118AA84AE00A53C5E /* main.m */; };
+		6FCF103618AA84AE00A53C5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF103518AA84AE00A53C5E /* AppDelegate.m */; };
+		6FCF103E18AA84AE00A53C5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FCF103D18AA84AE00A53C5E /* Images.xcassets */; };
+		6FCF104518AA84AE00A53C5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF104418AA84AE00A53C5E /* XCTest.framework */; };
+		6FCF104618AA84AE00A53C5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102518AA84AE00A53C5E /* Foundation.framework */; };
+		6FCF104718AA84AE00A53C5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102918AA84AE00A53C5E /* UIKit.framework */; };
+		6FCF105D18AA8BF200A53C5E /* CustomMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF105C18AA8BF200A53C5E /* CustomMapAnnotation.m */; };
+		6FCF106B18AA92BB00A53C5E /* CustomMapAnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF106918AA92BB00A53C5E /* CustomMapAnnotationViewController.m */; };
+		6FCF106C18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCF106A18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib */; };
+		6FCF106F18AA9B6300A53C5E /* CustomMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF106E18AA9B6300A53C5E /* CustomMapAnnotationView.m */; };
+		6FCF107818AABFC100A53C5E /* DefaultAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF107718AABFC100A53C5E /* DefaultAnnotation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6FCF104818AA84AE00A53C5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FCF101A18AA84AE00A53C5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FCF102118AA84AE00A53C5E;
+			remoteInfo = CustomMapAnnotation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6F01B5BF18ABF61300EB1823 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
+		6F01B5C018ABF61300EB1823 /* me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me@2x.png"; sourceTree = "<group>"; };
+		6FCF102218AA84AE00A53C5E /* CustomMapAnnotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomMapAnnotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FCF102518AA84AE00A53C5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6FCF102718AA84AE00A53C5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6FCF102918AA84AE00A53C5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6FCF102D18AA84AE00A53C5E /* CustomMapAnnotation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CustomMapAnnotation-Info.plist"; sourceTree = "<group>"; };
+		6FCF102F18AA84AE00A53C5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6FCF103118AA84AE00A53C5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6FCF103318AA84AE00A53C5E /* CustomMapAnnotation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomMapAnnotation-Prefix.pch"; sourceTree = "<group>"; };
+		6FCF103418AA84AE00A53C5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6FCF103518AA84AE00A53C5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6FCF103D18AA84AE00A53C5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6FCF104318AA84AE00A53C5E /* CustomMapAnnotationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomMapAnnotationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FCF104418AA84AE00A53C5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6FCF105B18AA8BF200A53C5E /* CustomMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMapAnnotation.h; sourceTree = "<group>"; };
+		6FCF105C18AA8BF200A53C5E /* CustomMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMapAnnotation.m; sourceTree = "<group>"; };
+		6FCF106818AA92BB00A53C5E /* CustomMapAnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMapAnnotationViewController.h; sourceTree = "<group>"; };
+		6FCF106918AA92BB00A53C5E /* CustomMapAnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMapAnnotationViewController.m; sourceTree = "<group>"; };
+		6FCF106A18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomMapAnnotationViewController.xib; sourceTree = "<group>"; };
+		6FCF106D18AA9B6300A53C5E /* CustomMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMapAnnotationView.h; sourceTree = "<group>"; };
+		6FCF106E18AA9B6300A53C5E /* CustomMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMapAnnotationView.m; sourceTree = "<group>"; };
+		6FCF107618AABFC100A53C5E /* DefaultAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAnnotation.h; sourceTree = "<group>"; };
+		6FCF107718AABFC100A53C5E /* DefaultAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAnnotation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FCF101F18AA84AE00A53C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FCF102818AA84AE00A53C5E /* CoreGraphics.framework in Frameworks */,
+				6FCF102A18AA84AE00A53C5E /* UIKit.framework in Frameworks */,
+				6FCF102618AA84AE00A53C5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FCF104018AA84AE00A53C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FCF104518AA84AE00A53C5E /* XCTest.framework in Frameworks */,
+				6FCF104718AA84AE00A53C5E /* UIKit.framework in Frameworks */,
+				6FCF104618AA84AE00A53C5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F01B5BE18ABF5B300EB1823 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6F01B5BF18ABF61300EB1823 /* me.png */,
+				6F01B5C018ABF61300EB1823 /* me@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		6FCF101918AA84AE00A53C5E = {
+			isa = PBXGroup;
+			children = (
+				6FCF102B18AA84AE00A53C5E /* CustomMapAnnotation */,
+				6FCF102418AA84AE00A53C5E /* Frameworks */,
+				6FCF102318AA84AE00A53C5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6FCF102318AA84AE00A53C5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FCF102218AA84AE00A53C5E /* CustomMapAnnotation.app */,
+				6FCF104318AA84AE00A53C5E /* CustomMapAnnotationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FCF102418AA84AE00A53C5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FCF102518AA84AE00A53C5E /* Foundation.framework */,
+				6FCF102718AA84AE00A53C5E /* CoreGraphics.framework */,
+				6FCF102918AA84AE00A53C5E /* UIKit.framework */,
+				6FCF104418AA84AE00A53C5E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6FCF102B18AA84AE00A53C5E /* CustomMapAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				6FCF105E18AA8D9F00A53C5E /* views */,
+				6FCF105A18AA8BDA00A53C5E /* custom */,
+				6FCF103418AA84AE00A53C5E /* AppDelegate.h */,
+				6FCF103518AA84AE00A53C5E /* AppDelegate.m */,
+				6FCF103D18AA84AE00A53C5E /* Images.xcassets */,
+				6FCF102C18AA84AE00A53C5E /* Supporting Files */,
+			);
+			path = CustomMapAnnotation;
+			sourceTree = "<group>";
+		};
+		6FCF102C18AA84AE00A53C5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F01B5BE18ABF5B300EB1823 /* images */,
+				6FCF102D18AA84AE00A53C5E /* CustomMapAnnotation-Info.plist */,
+				6FCF102E18AA84AE00A53C5E /* InfoPlist.strings */,
+				6FCF103118AA84AE00A53C5E /* main.m */,
+				6FCF103318AA84AE00A53C5E /* CustomMapAnnotation-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6FCF105A18AA8BDA00A53C5E /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				6FCF107618AABFC100A53C5E /* DefaultAnnotation.h */,
+				6FCF107718AABFC100A53C5E /* DefaultAnnotation.m */,
+				6FCF105B18AA8BF200A53C5E /* CustomMapAnnotation.h */,
+				6FCF105C18AA8BF200A53C5E /* CustomMapAnnotation.m */,
+				6FCF106818AA92BB00A53C5E /* CustomMapAnnotationViewController.h */,
+				6FCF106918AA92BB00A53C5E /* CustomMapAnnotationViewController.m */,
+				6FCF106D18AA9B6300A53C5E /* CustomMapAnnotationView.h */,
+				6FCF106E18AA9B6300A53C5E /* CustomMapAnnotationView.m */,
+			);
+			name = custom;
+			sourceTree = "<group>";
+		};
+		6FCF105E18AA8D9F00A53C5E /* views */ = {
+			isa = PBXGroup;
+			children = (
+				6FCF106A18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FCF102118AA84AE00A53C5E /* CustomMapAnnotation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FCF105418AA84AE00A53C5E /* Build configuration list for PBXNativeTarget "CustomMapAnnotation" */;
+			buildPhases = (
+				6FCF101E18AA84AE00A53C5E /* Sources */,
+				6FCF101F18AA84AE00A53C5E /* Frameworks */,
+				6FCF102018AA84AE00A53C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CustomMapAnnotation;
+			productName = CustomMapAnnotation;
+			productReference = 6FCF102218AA84AE00A53C5E /* CustomMapAnnotation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6FCF104218AA84AE00A53C5E /* CustomMapAnnotationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FCF105718AA84AE00A53C5E /* Build configuration list for PBXNativeTarget "CustomMapAnnotationTests" */;
+			buildPhases = (
+				6FCF103F18AA84AE00A53C5E /* Sources */,
+				6FCF104018AA84AE00A53C5E /* Frameworks */,
+				6FCF104118AA84AE00A53C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FCF104918AA84AE00A53C5E /* PBXTargetDependency */,
+			);
+			name = CustomMapAnnotationTests;
+			productName = CustomMapAnnotationTests;
+			productReference = 6FCF104318AA84AE00A53C5E /* CustomMapAnnotationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FCF101A18AA84AE00A53C5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = mike.tihonchik;
+				TargetAttributes = {
+					6FCF104218AA84AE00A53C5E = {
+						TestTargetID = 6FCF102118AA84AE00A53C5E;
+					};
+				};
+			};
+			buildConfigurationList = 6FCF101D18AA84AE00A53C5E /* Build configuration list for PBXProject "CustomMapAnnotation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FCF101918AA84AE00A53C5E;
+			productRefGroup = 6FCF102318AA84AE00A53C5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FCF102118AA84AE00A53C5E /* CustomMapAnnotation */,
+				6FCF104218AA84AE00A53C5E /* CustomMapAnnotationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FCF102018AA84AE00A53C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FCF106C18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib in Resources */,
+				6FCF103E18AA84AE00A53C5E /* Images.xcassets in Resources */,
+				6FCF103018AA84AE00A53C5E /* InfoPlist.strings in Resources */,
+				6F01B5C118ABF61300EB1823 /* me.png in Resources */,
+				6F01B5C218ABF61300EB1823 /* me@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FCF104118AA84AE00A53C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FCF101E18AA84AE00A53C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FCF107818AABFC100A53C5E /* DefaultAnnotation.m in Sources */,
+				6FCF105D18AA8BF200A53C5E /* CustomMapAnnotation.m in Sources */,
+				6FCF106F18AA9B6300A53C5E /* CustomMapAnnotationView.m in Sources */,
+				6FCF106B18AA92BB00A53C5E /* CustomMapAnnotationViewController.m in Sources */,
+				6FCF103618AA84AE00A53C5E /* AppDelegate.m in Sources */,
+				6FCF103218AA84AE00A53C5E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FCF103F18AA84AE00A53C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6FCF104918AA84AE00A53C5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FCF102118AA84AE00A53C5E /* CustomMapAnnotation */;
+			targetProxy = 6FCF104818AA84AE00A53C5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6FCF102E18AA84AE00A53C5E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FCF102F18AA84AE00A53C5E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FCF105218AA84AE00A53C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6FCF105318AA84AE00A53C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FCF105518AA84AE00A53C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CustomMapAnnotation/CustomMapAnnotation-Prefix.pch";
+				INFOPLIST_FILE = "CustomMapAnnotation/CustomMapAnnotation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6FCF105618AA84AE00A53C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CustomMapAnnotation/CustomMapAnnotation-Prefix.pch";
+				INFOPLIST_FILE = "CustomMapAnnotation/CustomMapAnnotation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6FCF105818AA84AE00A53C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CustomMapAnnotation.app/CustomMapAnnotation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CustomMapAnnotation/CustomMapAnnotation-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CustomMapAnnotationTests/CustomMapAnnotationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6FCF105918AA84AE00A53C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CustomMapAnnotation.app/CustomMapAnnotation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CustomMapAnnotation/CustomMapAnnotation-Prefix.pch";
+				INFOPLIST_FILE = "CustomMapAnnotationTests/CustomMapAnnotationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FCF101D18AA84AE00A53C5E /* Build configuration list for PBXProject "CustomMapAnnotation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FCF105218AA84AE00A53C5E /* Debug */,
+				6FCF105318AA84AE00A53C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FCF105418AA84AE00A53C5E /* Build configuration list for PBXNativeTarget "CustomMapAnnotation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FCF105518AA84AE00A53C5E /* Debug */,
+				6FCF105618AA84AE00A53C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FCF105718AA84AE00A53C5E /* Build configuration list for PBXNativeTarget "CustomMapAnnotationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FCF105818AA84AE00A53C5E /* Debug */,
+				6FCF105918AA84AE00A53C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FCF101A18AA84AE00A53C5E /* Project object */;
+}
