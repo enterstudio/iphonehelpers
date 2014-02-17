@@ -42,7 +42,7 @@
 - (id) initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier]) {
 		self.contentHeight = 80.0;
-		self.offsetFromParent = CGPointMake(8, -14); //this works for MKPinAnnotationView
+		self.offsetFromParent = CGPointMake(160, -25); //this works for MKPinAnnotationView
 		self.enabled = NO;
 		self.backgroundColor = [UIColor clearColor];
 	}
@@ -59,7 +59,7 @@
 
 - (void)prepareFrameSize {
 	CGRect frame = self.frame;
-	CGFloat height =	self.contentHeight + ContentHeightBuffer + BottomShadowBufferSize -self.offsetFromParent.y;
+	CGFloat height = self.contentHeight + ContentHeightBuffer + BottomShadowBufferSize -self.offsetFromParent.y;
 	
 	frame.size = CGSizeMake(self.mapView.frame.size.width, height);
 	self.frame = frame;
@@ -91,6 +91,10 @@
 //if the pin is too close to the edge of the map view we need to shift the map view so the callout will fit.
 - (void)adjustMapRegionIfNeeded {
 	//Longitude
+    
+    CGFloat xPixelShift = 0;
+    CGFloat yPixelShift = 0;
+/*
 	CGFloat xPixelShift = 0;
 	if ([self relativeParentXPosition] < 38) {
 		xPixelShift = 38 - [self relativeParentXPosition];
@@ -108,7 +112,7 @@
 	} else if (pixelsFromBottomOfMapView < 10) {
 		yPixelShift = -(10 - pixelsFromBottomOfMapView);
 	}
-	
+*/
 	//Calculate new center point, if needed
 	if (xPixelShift || yPixelShift) {
 		CGFloat pixelsPerDegreeLongitude = self.mapView.frame.size.width / self.mapView.region.span.longitudeDelta;
@@ -182,7 +186,7 @@
 
 - (void)didMoveToSuperview {
 	[self adjustMapRegionIfNeeded];
-	[self animateIn];
+//	[self animateIn];
 }
 
 - (void)drawRect:(CGRect)rect {
