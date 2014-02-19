@@ -14,6 +14,7 @@
 @interface CustomMapAnnotationViewController : UIViewController <MKMapViewDelegate> {
 	MKMapView *_mapView;
 	DefaultAnnotation *_customAnnotation;
+    DefaultAnnotation *_customAnnotation2;
     DefaultAnnotation *_defaultAnnotation;
     CustomMapAnnotation *_customMapAnnotation;
     MKAnnotationView *_selectedAnnotation;

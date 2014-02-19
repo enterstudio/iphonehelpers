@@ -23,6 +23,7 @@
 - (void)prepareContentFrame;
 - (void)prepareFrameSize;
 - (void)prepareOffset;
+- (void)resetOffsetFromParent;
 - (CGFloat)relativeParentXPosition;
 - (void)adjustMapRegionIfNeeded;
 
@@ -42,7 +43,6 @@
 - (id) initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier]) {
 		self.contentHeight = 80.0;
-		self.offsetFromParent = CGPointMake(160, -25); //this works for MKPinAnnotationView
 		self.enabled = NO;
 		self.backgroundColor = [UIColor clearColor];
 	}
@@ -54,7 +54,12 @@
 	[self prepareFrameSize];
 	[self prepareOffset];
 	[self prepareContentFrame];
+    [self resetOffsetFromParent];
 	[self setNeedsDisplay];
+}
+
+- (void) resetOffsetFromParent {
+    self.offsetFromParent = CGPointMake(25, -25);
 }
 
 - (void)prepareFrameSize {
@@ -87,31 +92,31 @@
 	self.centerOffset = CGPointMake(xOffset, yOffset);
 }
 
-//if the pin is too close to the edge of the map view we need to shift the map view so the callout will fit.
 - (void)adjustMapRegionIfNeeded {
-	//Longitude
-    
-    CGFloat xPixelShift = 0;
-    CGFloat yPixelShift = 0;
-/*
 	CGFloat xPixelShift = 0;
-	if ([self relativeParentXPosition] < 38) {
-		xPixelShift = 38 - [self relativeParentXPosition];
-	} else if ([self relativeParentXPosition] > self.frame.size.width - 38) {
-		xPixelShift = (self.frame.size.width - 38) - [self relativeParentXPosition];
+	CGFloat yPixelShift = 0;
+
+    // X-axis: allow 10px padding on each side (total: 35); otherwise, move
+    CGFloat distanceToLeftBorder = [self relativeParentXPosition];
+    NSLog(@"DIST: %f", distanceToLeftBorder);
+    if (distanceToLeftBorder < 35) {
+		xPixelShift = 35 - distanceToLeftBorder;
+	} else if (distanceToLeftBorder > self.frame.size.width - 35) {
+		xPixelShift = (self.frame.size.width - 35) - distanceToLeftBorder;
 	}
 	
-	//Latitude
+	// Y-axis:
 	CGPoint mapViewOriginRelativeToParent = [self.mapView convertPoint:self.mapView.frame.origin toView:self.parentAnnotationView];
-	CGFloat yPixelShift = 0;
-	CGFloat pixelsFromTopOfMapView = -(mapViewOriginRelativeToParent.y + self.frame.size.height - BottomShadowBufferSize);
+    NSLog(@"Y: %f Height: %f", mapViewOriginRelativeToParent.y, self.frame.size.height);
+	CGFloat pixelsFromTopOfMapView = -(mapViewOriginRelativeToParent.y + self.frame.size.height);
+    //- BottomShadowBufferSize);
 	CGFloat pixelsFromBottomOfMapView = self.mapView.frame.size.height + mapViewOriginRelativeToParent.y - self.parentAnnotationView.frame.size.height;
 	if (pixelsFromTopOfMapView < 7) {
 		yPixelShift = 7 - pixelsFromTopOfMapView;
 	} else if (pixelsFromBottomOfMapView < 10) {
 		yPixelShift = -(10 - pixelsFromBottomOfMapView);
 	}
-*/
+
 	//Calculate new center point, if needed
 	if (xPixelShift || yPixelShift) {
 		CGFloat pixelsPerDegreeLongitude = self.mapView.frame.size.width / self.mapView.region.span.longitudeDelta;
@@ -228,7 +233,7 @@
 	CGPathCloseSubpath(path);
 	
 	//Fill Callout Bubble & Add Shadow
-	color = [[UIColor blackColor] colorWithAlphaComponent:.6];
+	color = [[UIColor whiteColor] colorWithAlphaComponent:.7];
 	[color setFill];
 	CGContextAddPath(context, path);
 	CGContextSaveGState(context);
