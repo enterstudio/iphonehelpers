@@ -52,10 +52,19 @@
         if (!customMapAnnotationView) {
             customMapAnnotationView = [[CustomMapAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomMapAnnotation"];
             customMapAnnotationView.contentHeight = 78.0f;
-            //UIImage *asynchronyLogo = [UIImage imageNamed:@"me.png"];
-            //UIImageView *asynchronyLogoView = [[UIImageView alloc] initWithImage:asynchronyLogo];
-            //asynchronyLogoView.frame = CGRectMake(5, 2, asynchronyLogoView.frame.size.width, asynchronyLogoView.frame.size.height);
             LocationDataView *asynchronyLogoView = [LocationDataView loadCustomView];
+            UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 0, 150, 20)];
+            nameLabel.text = @"Lota";
+            UILabel *streetLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 20, 150, 20)];
+            streetLabel.text = @"Raiņa iela 5";
+            UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 40, 150, 20)];
+            cityLabel.text = @"Ventspils, LV-3601, Латвия";
+            UILabel *phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 60, 150, 20)];
+            phoneLabel.text = @"63620275";
+            [asynchronyLogoView addSubview:nameLabel];
+            [asynchronyLogoView addSubview:streetLabel];
+            [asynchronyLogoView addSubview:cityLabel];
+            [asynchronyLogoView addSubview:phoneLabel];
             [customMapAnnotationView.contentView addSubview:asynchronyLogoView];
         }
         customMapAnnotationView.mapView = self.mapView;

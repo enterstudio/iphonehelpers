@@ -81,8 +81,7 @@
 	CGFloat xOffset =	(self.mapView.frame.size.width / 2) -
     (parentOrigin.x + self.offsetFromParent.x);
 	
-	//Add half our height plus half of the height of the annotation we are tied to so that our bottom lines up to its top
-	//Then take into account its offset and the extra space needed for our drop shadow
+	//Add half our height plus half of the height of the annotation we are tied to so that our bottom lines up to its top. Then take into account its offset and the extra space needed for our drop shadow
 	CGFloat yOffset = -(self.frame.size.height / 2 + self.parentAnnotationView.frame.size.height / 2) + self.offsetFromParent.y + BottomShadowBufferSize;
 	
 	self.centerOffset = CGPointMake(xOffset, yOffset);
@@ -186,7 +185,7 @@
 
 - (void)didMoveToSuperview {
 	[self adjustMapRegionIfNeeded];
-//	[self animateIn];
+	[self animateIn];
 }
 
 - (void)drawRect:(CGRect)rect {
