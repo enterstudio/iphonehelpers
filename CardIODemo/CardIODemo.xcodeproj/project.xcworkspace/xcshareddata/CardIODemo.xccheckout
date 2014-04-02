@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1EFF76AF-B884-433E-A6EC-08A911AFC51C</string>
+	<string>4FF93D73-1120-4F6E-8CAC-29E377762166</string>
 	<key>IDESourceControlProjectName</key>
 	<string>CardIODemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9A25DB3D-2ED8-4615-9BF2-AFC346A9A45B</key>
-		<string>https://github.com/miketihonchik/iphonedev.git</string>
+		<key>B1820E4C-DCDE-4F59-99DA-CC303CFD7A07</key>
+		<string>https://github.com/miketihonchik/iphonehelpers.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CardIODemo/CardIODemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9A25DB3D-2ED8-4615-9BF2-AFC346A9A45B</key>
+		<key>B1820E4C-DCDE-4F59-99DA-CC303CFD7A07</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/miketihonchik/iphonedev.git</string>
+	<string>https://github.com/miketihonchik/iphonehelpers.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9A25DB3D-2ED8-4615-9BF2-AFC346A9A45B</string>
+	<string>B1820E4C-DCDE-4F59-99DA-CC303CFD7A07</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9A25DB3D-2ED8-4615-9BF2-AFC346A9A45B</string>
+			<string>B1820E4C-DCDE-4F59-99DA-CC303CFD7A07</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iphonedev</string>
+			<string>iphonehelpers</string>
 		</dict>
 	</array>
 </dict>

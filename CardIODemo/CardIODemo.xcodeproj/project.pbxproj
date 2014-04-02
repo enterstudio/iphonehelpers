@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F08E0CB18EC64F2009632C2 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B4718E9FA2E00793ECE /* libCardIO.a */; };
+		6F08E0CE18EC6739009632C2 /* primButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F08E0CC18EC6739009632C2 /* primButton.png */; };
+		6F08E0CF18EC6739009632C2 /* primButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F08E0CD18EC6739009632C2 /* primButton@2x.png */; };
 		6F786B0C18E9F95000793ECE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B0B18E9F95000793ECE /* Foundation.framework */; };
 		6F786B0E18E9F95000793ECE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B0D18E9F95000793ECE /* CoreGraphics.framework */; };
 		6F786B1018E9F95000793ECE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B0F18E9F95000793ECE /* UIKit.framework */; };
@@ -21,7 +24,6 @@
 		6F786B2D18E9F95000793ECE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B0F18E9F95000793ECE /* UIKit.framework */; };
 		6F786B3518E9F95000793ECE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F786B3318E9F95000793ECE /* InfoPlist.strings */; };
 		6F786B3718E9F95000793ECE /* CardIODemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F786B3618E9F95000793ECE /* CardIODemoTests.m */; };
-		6F786B4818E9FA2E00793ECE /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B4718E9FA2E00793ECE /* libCardIO.a */; };
 		6F786B4A18E9FA9300793ECE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B4918E9FA9300793ECE /* AVFoundation.framework */; };
 		6F786B5418EA00AB00793ECE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B4D18EA00AB00793ECE /* AudioToolbox.framework */; };
 		6F786B5518EA00AB00793ECE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F786B4E18EA00AB00793ECE /* CoreMedia.framework */; };
@@ -52,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F08E0CA18EC62BA009632C2 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		6F08E0CC18EC6739009632C2 /* primButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = primButton.png; path = images/primButton.png; sourceTree = "<group>"; };
+		6F08E0CD18EC6739009632C2 /* primButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "primButton@2x.png"; path = "images/primButton@2x.png"; sourceTree = "<group>"; };
 		6F786B0818E9F95000793ECE /* CardIODemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardIODemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F786B0B18E9F95000793ECE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6F786B0D18E9F95000793ECE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,7 +92,6 @@
 		6F786B5118EA00AB00793ECE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6F786B5218EA00AB00793ECE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6F786B5318EA00AB00793ECE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		6FBA4A4618EB1503001F1632 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		6FBA4A4818EB2C7A001F1632 /* view-background-i5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "view-background-i5.png"; path = "images/view-background-i5.png"; sourceTree = "<group>"; };
 		6FBA4A4918EB2C7A001F1632 /* view-background-i5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "view-background-i5@2x.png"; path = "images/view-background-i5@2x.png"; sourceTree = "<group>"; };
 		6FBA4A4A18EB2C7A001F1632 /* view-background-left-corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "view-background-left-corner.png"; path = "images/view-background-left-corner.png"; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F08E0CB18EC64F2009632C2 /* libCardIO.a in Frameworks */,
 				6F786B5418EA00AB00793ECE /* AudioToolbox.framework in Frameworks */,
 				6F786B5518EA00AB00793ECE /* CoreMedia.framework in Frameworks */,
 				6F786B5618EA00AB00793ECE /* CoreVideo.framework in Frameworks */,
@@ -115,7 +120,6 @@
 				6F786B0C18E9F95000793ECE /* Foundation.framework in Frameworks */,
 				6F786B1018E9F95000793ECE /* UIKit.framework in Frameworks */,
 				6F786B4A18E9FA9300793ECE /* AVFoundation.framework in Frameworks */,
-				6F786B4818E9FA2E00793ECE /* libCardIO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +187,7 @@
 				6F786B2118E9F95000793ECE /* ViewController.m */,
 				6F786B2318E9F95000793ECE /* Images.xcassets */,
 				6F786B1218E9F95000793ECE /* Supporting Files */,
-				6FBA4A4618EB1503001F1632 /* Constants.h */,
+				6F08E0CA18EC62BA009632C2 /* Helpers.h */,
 			);
 			path = CardIODemo;
 			sourceTree = "<group>";
@@ -234,6 +238,8 @@
 		6FBA4A4718EB1835001F1632 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6F08E0CC18EC6739009632C2 /* primButton.png */,
+				6F08E0CD18EC6739009632C2 /* primButton@2x.png */,
 				6FBA4A5A18EB4479001F1632 /* demo.png */,
 				6FBA4A5B18EB4479001F1632 /* demo@2x.png */,
 				6FBA4A5818EB31DF001F1632 /* cardio.png */,
@@ -328,8 +334,10 @@
 				6F786B2418E9F95000793ECE /* Images.xcassets in Resources */,
 				6FBA4A5218EB2C7A001F1632 /* view-background-left-corner.png in Resources */,
 				6FBA4A5918EB31DF001F1632 /* cardio.png in Resources */,
+				6F08E0CE18EC6739009632C2 /* primButton.png in Resources */,
 				6FBA4A5318EB2C7A001F1632 /* view-background-left-corner@2x.png in Resources */,
 				6FBA4A5118EB2C7A001F1632 /* view-background-i5@2x.png in Resources */,
+				6F08E0CF18EC6739009632C2 /* primButton@2x.png in Resources */,
 				6F786B1618E9F95000793ECE /* InfoPlist.strings in Resources */,
 				6FBA4A5718EB2C7A001F1632 /* view-background@2x.png in Resources */,
 				6F786B1F18E9F95000793ECE /* Main.storyboard in Resources */,
@@ -489,6 +497,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mtihonc1/dev2/iphonedev/CardIODemo/CardIODemo/CardIO,
+					"$(PROJECT_DIR)/CardIODemo/CardIO",
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,6 +518,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mtihonc1/dev2/iphonedev/CardIODemo/CardIODemo/CardIO,
+					"$(PROJECT_DIR)/CardIODemo/CardIO",
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
