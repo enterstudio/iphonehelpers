@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1EFF76AF-B884-433E-A6EC-08A911AFC51C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CardIODemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9A25DB3D-2ED8-4615-9BF2-AFC346A9A45B</key>
+		<string>https://github.com/miketihonchik/iphonedev.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CardIODemo/CardIODemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9A25DB3D-2ED8-4615-9BF2-AFC346A9A45B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/miketihonchik/iphonedev.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9A25DB3D-2ED8-4615-9BF2-AFC346A9A45B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9A25DB3D-2ED8-4615-9BF2-AFC346A9A45B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iphonedev</string>
+		</dict>
+	</array>
+</dict>
+</plist>
