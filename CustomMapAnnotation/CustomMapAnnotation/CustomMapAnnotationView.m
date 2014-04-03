@@ -10,9 +10,9 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 
-#define BottomShadowBufferSize 6.0f
-#define ContentHeightBuffer 8.0f
-#define HeightAboveParent 2.0f
+#define CalloutMapAnnotationViewBottomShadowBufferSize 6.0f
+#define CalloutMapAnnotationViewContentHeightBuffer 8.0f
+#define CalloutMapAnnotationViewHeightAboveParent 2.0f
 
 @interface CustomMapAnnotationView()
 
@@ -23,11 +23,11 @@
 - (void)prepareContentFrame;
 - (void)prepareFrameSize;
 - (void)prepareOffset;
-- (void)resetOffsetFromParent;
 - (CGFloat)relativeParentXPosition;
 - (void)adjustMapRegionIfNeeded;
 
 @end
+
 
 @implementation CustomMapAnnotationView
 
@@ -43,6 +43,7 @@
 - (id) initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier]) {
 		self.contentHeight = 80.0;
+		self.offsetFromParent = CGPointMake(8, -14); //this works for MKPinAnnotationView
 		self.enabled = NO;
 		self.backgroundColor = [UIColor clearColor];
 	}
@@ -54,17 +55,15 @@
 	[self prepareFrameSize];
 	[self prepareOffset];
 	[self prepareContentFrame];
-    [self resetOffsetFromParent];
 	[self setNeedsDisplay];
-}
-
-- (void) resetOffsetFromParent {
-    self.offsetFromParent = CGPointMake(25, -25);
 }
 
 - (void)prepareFrameSize {
 	CGRect frame = self.frame;
-	CGFloat height = self.contentHeight + ContentHeightBuffer + BottomShadowBufferSize -self.offsetFromParent.y;
+	CGFloat height =	self.contentHeight +
+	CalloutMapAnnotationViewContentHeightBuffer +
+	CalloutMapAnnotationViewBottomShadowBufferSize -
+	self.offsetFromParent.y;
 	
 	frame.size = CGSizeMake(self.mapView.frame.size.width, height);
 	self.frame = frame;
@@ -86,37 +85,42 @@
 	CGFloat xOffset =	(self.mapView.frame.size.width / 2) -
     (parentOrigin.x + self.offsetFromParent.x);
 	
-	//Add half our height plus half of the height of the annotation we are tied to so that our bottom lines up to its top. Then take into account its offset and the extra space needed for our drop shadow
-	CGFloat yOffset = -(self.frame.size.height / 2 + self.parentAnnotationView.frame.size.height / 2) + self.offsetFromParent.y + BottomShadowBufferSize;
+	//Add half our height plus half of the height of the annotation we are tied to so that our bottom lines up to its top
+	//Then take into account its offset and the extra space needed for our drop shadow
+	CGFloat yOffset = -(self.frame.size.height / 2 +
+						self.parentAnnotationView.frame.size.height / 2) +
+    self.offsetFromParent.y +
+    CalloutMapAnnotationViewBottomShadowBufferSize;
 	
 	self.centerOffset = CGPointMake(xOffset, yOffset);
 }
 
+//if the pin is too close to the edge of the map view we need to shift the map view so the callout will fit.
 - (void)adjustMapRegionIfNeeded {
+	//Longitude
 	CGFloat xPixelShift = 0;
-	CGFloat yPixelShift = 0;
-
-    // X-axis: allow 10px padding on each side (total: 35); otherwise, move
-    CGFloat distanceToLeftBorder = [self relativeParentXPosition];
-    NSLog(@"DIST: %f", distanceToLeftBorder);
-    if (distanceToLeftBorder < 35) {
-		xPixelShift = 35 - distanceToLeftBorder;
-	} else if (distanceToLeftBorder > self.frame.size.width - 35) {
-		xPixelShift = (self.frame.size.width - 35) - distanceToLeftBorder;
+	if ([self relativeParentXPosition] < 38) {
+		xPixelShift = 38 - [self relativeParentXPosition];
+	} else if ([self relativeParentXPosition] > self.frame.size.width - 38) {
+		xPixelShift = (self.frame.size.width - 38) - [self relativeParentXPosition];
 	}
 	
-	// Y-axis:
+	
+	//Latitude
 	CGPoint mapViewOriginRelativeToParent = [self.mapView convertPoint:self.mapView.frame.origin toView:self.parentAnnotationView];
-    NSLog(@"Y: %f Height: %f", mapViewOriginRelativeToParent.y, self.frame.size.height);
-	CGFloat pixelsFromTopOfMapView = -(mapViewOriginRelativeToParent.y + self.frame.size.height);
-    //- BottomShadowBufferSize);
+	CGFloat yPixelShift = 0;
+	CGFloat pixelsFromTopOfMapView = -(mapViewOriginRelativeToParent.y + self.frame.size.height - CalloutMapAnnotationViewBottomShadowBufferSize);
 	CGFloat pixelsFromBottomOfMapView = self.mapView.frame.size.height + mapViewOriginRelativeToParent.y - self.parentAnnotationView.frame.size.height;
 	if (pixelsFromTopOfMapView < 7) {
 		yPixelShift = 7 - pixelsFromTopOfMapView;
 	} else if (pixelsFromBottomOfMapView < 10) {
 		yPixelShift = -(10 - pixelsFromBottomOfMapView);
 	}
-
+    
+    NSLog(@"TOP: %f", pixelsFromTopOfMapView);
+    NSLog(@"BOTTOM: %f", pixelsFromBottomOfMapView);
+    NSLog(@"Y-Pixel: %f", yPixelShift);
+	
 	//Calculate new center point, if needed
 	if (xPixelShift || yPixelShift) {
 		CGFloat pixelsPerDegreeLongitude = self.mapView.frame.size.width / self.mapView.region.span.longitudeDelta;
@@ -146,7 +150,7 @@
 }
 
 - (CGFloat)yTransformForScale:(CGFloat)scale {
-	CGFloat yDistanceFromCenterToParent = (((self.endFrame.size.height) / 2) + self.offsetFromParent.y + BottomShadowBufferSize + HeightAboveParent);
+	CGFloat yDistanceFromCenterToParent = (((self.endFrame.size.height) / 2) + self.offsetFromParent.y + CalloutMapAnnotationViewBottomShadowBufferSize + CalloutMapAnnotationViewHeightAboveParent);
 	return yDistanceFromCenterToParent - yDistanceFromCenterToParent * scale;
 }
 
@@ -205,7 +209,7 @@
 	//Determine Size
 	rect = self.bounds;
 	rect.size.width -= stroke + 14;
-	rect.size.height -= stroke + HeightAboveParent - self.offsetFromParent.y + BottomShadowBufferSize;
+	rect.size.height -= stroke + CalloutMapAnnotationViewHeightAboveParent - self.offsetFromParent.y + CalloutMapAnnotationViewBottomShadowBufferSize;
 	rect.origin.x += stroke / 2.0 + 7;
 	rect.origin.y += stroke / 2.0;
 	
@@ -233,7 +237,7 @@
 	CGPathCloseSubpath(path);
 	
 	//Fill Callout Bubble & Add Shadow
-	color = [[UIColor whiteColor] colorWithAlphaComponent:.7];
+	color = [[UIColor blackColor] colorWithAlphaComponent:.6];
 	[color setFill];
 	CGContextAddPath(context, path);
 	CGContextSaveGState(context);
@@ -349,5 +353,4 @@
 	self.parentAnnotationView = nil;
 	self.mapView = nil;
 }
-
 @end

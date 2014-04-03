@@ -55,7 +55,9 @@
         if (!customMapAnnotationView) {
             customMapAnnotationView = [[CustomMapAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomMapAnnotation"];
             customMapAnnotationView.contentHeight = 78.0f;
-            LocationDataView *asynchronyLogoView = [LocationDataView loadCustomView];
+            UIView *customDisplayView = [[UIView alloc] init];
+/*            UIImageView *displayImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"me.png"]];
+            displayImage.frame = CGRectMake(2.0f, 2.0f, 74.0f, 74.0f);
             UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 0, 150, 20)];
             nameLabel.text = @"Lota";
             nameLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:17];
@@ -69,11 +71,12 @@
             phoneLabel.text = @"63620275";
             phoneLabel.font = [UIFont fontWithName:@"Verdana" size:13];
             phoneLabel.textColor = [UIColor blueColor];
-            [asynchronyLogoView addSubview:nameLabel];
-            [asynchronyLogoView addSubview:streetLabel];
-            [asynchronyLogoView addSubview:cityLabel];
-            [asynchronyLogoView addSubview:phoneLabel];
-            [customMapAnnotationView.contentView addSubview:asynchronyLogoView];
+            [customDisplayView addSubview:displayImage];
+            [customDisplayView addSubview:nameLabel];
+            [customDisplayView addSubview:streetLabel];
+            [customDisplayView addSubview:cityLabel];
+            [customDisplayView addSubview:phoneLabel]; */
+            [customMapAnnotationView.contentView addSubview:customDisplayView];
         }
         customMapAnnotationView.mapView = self.mapView;
         return customMapAnnotationView;
