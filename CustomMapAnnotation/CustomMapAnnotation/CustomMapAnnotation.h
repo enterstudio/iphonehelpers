@@ -17,7 +17,7 @@
 @property (nonatomic) CLLocationDegrees latitude;
 @property (nonatomic) CLLocationDegrees longitude;
 
-- (id)initWithCoordinates:(CLLocationDegrees)latitude
-		  longitude:(CLLocationDegrees)longitude;
+- (id)initWithLatitude:(CLLocationDegrees)latitude
+		  andLongitude:(CLLocationDegrees)longitude;
 
 @end

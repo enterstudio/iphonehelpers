@@ -9,14 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface DefaultAnnotation : NSObject<MKAnnotation> {
+@interface DefaultAnnotation : NSObject <MKAnnotation> {
 	CLLocationDegrees _latitude;
 	CLLocationDegrees _longitude;
-    NSString *_title;
+	NSString *_title;
 }
 
 @property (nonatomic, retain) NSString *title;
 
-- (id)initWithCoordinates:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude;
+- (id)initWithLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude;
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 
 @end

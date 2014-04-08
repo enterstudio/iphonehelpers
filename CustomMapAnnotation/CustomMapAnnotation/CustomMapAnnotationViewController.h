@@ -13,14 +13,13 @@
 
 @interface CustomMapAnnotationViewController : UIViewController <MKMapViewDelegate> {
 	MKMapView *_mapView;
+    MKAnnotationView *_selectedAnnotationView;
 	DefaultAnnotation *_customAnnotation;
-    DefaultAnnotation *_customAnnotation2;
     DefaultAnnotation *_defaultAnnotation;
     CustomMapAnnotation *_customMapAnnotation;
-    MKAnnotationView *_selectedAnnotation;
 }
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) MKAnnotationView *selectedAnnotation;
+@property (nonatomic, retain) MKAnnotationView *selectedAnnotationView;
 
 @end

@@ -13,7 +13,8 @@
 @synthesize latitude = _latitude;
 @synthesize longitude = _longitude;
 
-- (id)initWithCoordinates:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude {
+- (id)initWithLatitude:(CLLocationDegrees)latitude
+		  andLongitude:(CLLocationDegrees)longitude {
 	if (self = [super init]) {
 		self.latitude = latitude;
 		self.longitude = longitude;
