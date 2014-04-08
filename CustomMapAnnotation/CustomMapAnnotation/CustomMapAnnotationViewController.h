@@ -15,6 +15,7 @@
 	MKMapView *_mapView;
     MKAnnotationView *_selectedAnnotationView;
 	DefaultAnnotation *_customAnnotation;
+    DefaultAnnotation *_customAnnotation2;
     DefaultAnnotation *_defaultAnnotation;
     CustomMapAnnotation *_customMapAnnotation;
 }

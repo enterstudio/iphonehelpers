@@ -105,7 +105,6 @@
 		xPixelShift = (self.frame.size.width - 38) - [self relativeParentXPosition];
 	}
 	
-	
 	//Latitude
 	CGPoint mapViewOriginRelativeToParent = [self.mapView convertPoint:self.mapView.frame.origin toView:self.parentAnnotationView];
 	CGFloat yPixelShift = 0;
@@ -116,10 +115,6 @@
 	} else if (pixelsFromBottomOfMapView < 10) {
 		yPixelShift = -(10 - pixelsFromBottomOfMapView);
 	}
-    
-    NSLog(@"TOP: %f", pixelsFromTopOfMapView);
-    NSLog(@"BOTTOM: %f", pixelsFromBottomOfMapView);
-    NSLog(@"Y-Pixel: %f", yPixelShift);
 	
 	//Calculate new center point, if needed
 	if (xPixelShift || yPixelShift) {
@@ -194,10 +189,11 @@
 
 - (void)didMoveToSuperview {
 	[self adjustMapRegionIfNeeded];
-	[self animateIn];
+	//[self animateIn];
 }
 
 - (void)drawRect:(CGRect)rect {
+    self.bounds = CGRectMake(0.0f, 0.0f, 320.0f, 108.0f);
 	CGFloat stroke = 1.0;
 	CGFloat radius = 7.0;
 	CGMutablePathRef path = CGPathCreateMutable();
@@ -205,14 +201,26 @@
 	CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGFloat parentX = [self relativeParentXPosition];
-	
+
+    NSLog(@"oX: %f", self.bounds.origin.x);
+    NSLog(@"oY: %f", self.bounds.origin.y);
+    NSLog(@"oW: %f", self.bounds.size.width);
+    NSLog(@"oH: %f", self.bounds.size.height);
+    
 	//Determine Size
 	rect = self.bounds;
 	rect.size.width -= stroke + 14;
 	rect.size.height -= stroke + CalloutMapAnnotationViewHeightAboveParent - self.offsetFromParent.y + CalloutMapAnnotationViewBottomShadowBufferSize;
 	rect.origin.x += stroke / 2.0 + 7;
 	rect.origin.y += stroke / 2.0;
-	
+//    rect.size.width = 300;
+//    rect.size.height = 85;
+    
+    NSLog(@"X: %f", rect.origin.x);
+    NSLog(@"Y: %f", rect.origin.y);
+    NSLog(@"W: %f", rect.size.width);
+    NSLog(@"H: %f", rect.size.height);
+    
 	//Create Path For Callout Bubble
 	CGPathMoveToPoint(path, NULL, rect.origin.x, rect.origin.y + radius);
 	CGPathAddLineToPoint(path, NULL, rect.origin.x, rect.origin.y + rect.size.height - radius);
@@ -237,7 +245,7 @@
 	CGPathCloseSubpath(path);
 	
 	//Fill Callout Bubble & Add Shadow
-	color = [[UIColor blackColor] colorWithAlphaComponent:.6];
+	color = [[UIColor lightGrayColor] colorWithAlphaComponent:.6];
 	[color setFill];
 	CGContextAddPath(context, path);
 	CGContextSaveGState(context);
@@ -252,7 +260,7 @@
 	CGContextSetLineCap(context, kCGLineCapSquare);
 	CGContextAddPath(context, path);
 	CGContextStrokePath(context);
-	
+
 	//Determine Size for Gloss
 	CGRect glossRect = self.bounds;
 	glossRect.size.width = rect.size.width - stroke;
