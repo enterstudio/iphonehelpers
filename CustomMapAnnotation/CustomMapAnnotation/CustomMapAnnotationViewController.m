@@ -53,7 +53,6 @@
 		CustomMapAnnotationView *customMapAnnotationView = (CustomMapAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"CalloutAnnotation"];
 		if (!customMapAnnotationView) {
 			customMapAnnotationView = [[CustomMapAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CalloutAnnotation"];
-//			customMapAnnotationView.contentHeight = 90.0f;
             
             UIView *customDisplayView = [[UIView alloc] init];
             

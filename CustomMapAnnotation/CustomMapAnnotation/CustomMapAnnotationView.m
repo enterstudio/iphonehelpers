@@ -110,8 +110,8 @@
 	CGFloat yPixelShift = 0;
 	CGFloat pixelsFromTopOfMapView = -(mapViewOriginRelativeToParent.y + self.frame.size.height - CalloutMapAnnotationViewBottomShadowBufferSize);
 	CGFloat pixelsFromBottomOfMapView = self.mapView.frame.size.height + mapViewOriginRelativeToParent.y - self.parentAnnotationView.frame.size.height;
-	if (pixelsFromTopOfMapView < 7) {
-		yPixelShift = 7 - pixelsFromTopOfMapView;
+	if (pixelsFromTopOfMapView < 20) {
+		yPixelShift = 20 - pixelsFromTopOfMapView;
 	} else if (pixelsFromBottomOfMapView < 10) {
 		yPixelShift = -(10 - pixelsFromBottomOfMapView);
 	}
