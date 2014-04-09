@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F01B5C118ABF61300EB1823 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F01B5BF18ABF61300EB1823 /* me.png */; };
 		6F01B5C218ABF61300EB1823 /* me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F01B5C018ABF61300EB1823 /* me@2x.png */; };
+		6F6AF21318F5DC99006293BD /* CustomLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6AF21218F5DC99006293BD /* CustomLocation.m */; };
 		6FCF102618AA84AE00A53C5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102518AA84AE00A53C5E /* Foundation.framework */; };
 		6FCF102818AA84AE00A53C5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102718AA84AE00A53C5E /* CoreGraphics.framework */; };
 		6FCF102A18AA84AE00A53C5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102918AA84AE00A53C5E /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		6F01B5BF18ABF61300EB1823 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		6F01B5C018ABF61300EB1823 /* me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me@2x.png"; sourceTree = "<group>"; };
+		6F6AF21118F5DC99006293BD /* CustomLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLocation.h; sourceTree = "<group>"; };
+		6F6AF21218F5DC99006293BD /* CustomLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLocation.m; sourceTree = "<group>"; };
 		6FCF102218AA84AE00A53C5E /* CustomMapAnnotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomMapAnnotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FCF102518AA84AE00A53C5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6FCF102718AA84AE00A53C5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -167,6 +170,8 @@
 				6FCF106918AA92BB00A53C5E /* CustomMapAnnotationViewController.m */,
 				6FCF106D18AA9B6300A53C5E /* CustomMapAnnotationView.h */,
 				6FCF106E18AA9B6300A53C5E /* CustomMapAnnotationView.m */,
+				6F6AF21118F5DC99006293BD /* CustomLocation.h */,
+				6F6AF21218F5DC99006293BD /* CustomLocation.m */,
 			);
 			name = custom;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			files = (
 				6FCF107818AABFC100A53C5E /* DefaultAnnotation.m in Sources */,
 				6FCF105D18AA8BF200A53C5E /* CustomMapAnnotation.m in Sources */,
+				6F6AF21318F5DC99006293BD /* CustomLocation.m in Sources */,
 				6FCF106F18AA9B6300A53C5E /* CustomMapAnnotationView.m in Sources */,
 				6FCF106B18AA92BB00A53C5E /* CustomMapAnnotationViewController.m in Sources */,
 				6FCF103618AA84AE00A53C5E /* AppDelegate.m in Sources */,

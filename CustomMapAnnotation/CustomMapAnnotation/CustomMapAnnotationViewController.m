@@ -11,6 +11,7 @@
 #import "CustomMapAnnotationView.h"
 #import "DefaultAnnotation.h"
 #import "LocationDataView.h"
+#import "CustomLocation.h"
 
 @interface CustomMapAnnotationViewController ()
 @property (nonatomic, retain) DefaultAnnotation *customAnnotation;
@@ -27,6 +28,7 @@
 @synthesize mapView = _mapView;
 @synthesize selectedAnnotationView =_selectedAnnotationView;
 @synthesize customMapAnnotation =_customMapAnnotation;
+@synthesize dataArray;
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
 	if (view.annotation == self.customAnnotation || view.annotation == self.customAnnotation2) {
@@ -122,6 +124,18 @@
 	self.mapView = nil;
 	self.customAnnotation = nil;
 	self.defaultAnnotation = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    dataArray = [[NSMutableArray alloc] init];
+    
+    //TODO: load array data here
+    
+    int len = [dataArray count];
+    for(int i = 0; i < len; i++) {
+        CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:i];
+    }
 }
 
 @end

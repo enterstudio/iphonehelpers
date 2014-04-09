@@ -22,5 +22,6 @@
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) MKAnnotationView *selectedAnnotationView;
+@property (nonatomic, retain) NSMutableArray *dataArray;
 
 @end
