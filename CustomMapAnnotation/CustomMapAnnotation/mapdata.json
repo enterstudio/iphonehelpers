@@ -1,0 +1,28 @@
+{
+    "locations": [
+        {
+            "name": "Lota",
+            "address": "Raiņa iela 5",
+            "city": "Ventspils, LV-3601, Латвия",
+            "phoneNumber": "63620275",
+            "latitude": "57.393716",
+            "longitude": "21.564763"
+        },
+        {
+            "name": "",
+            "address": "",
+            "city": "Ventspils",
+            "phoneNumber": "",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "name": "",
+            "address": "",
+            "city": "Ventspils",
+            "phoneNumber": "",
+            "latitude": "",
+            "longitude": ""
+        }
+    ]
+}

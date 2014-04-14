@@ -10,7 +10,6 @@
 #import "CustomMapAnnotation.h"
 #import "CustomMapAnnotationView.h"
 #import "DefaultAnnotation.h"
-#import "LocationDataView.h"
 #import "CustomLocation.h"
 
 @interface CustomMapAnnotationViewController ()
@@ -29,6 +28,69 @@
 @synthesize selectedAnnotationView =_selectedAnnotationView;
 @synthesize customMapAnnotation =_customMapAnnotation;
 @synthesize dataArray;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	self.mapView.delegate = self;
+	
+	CLLocationCoordinate2D mapCoordinates = {57.392, 21.563295};
+    MKCoordinateRegion coordinateOptions = [self.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(mapCoordinates, 800, 800)];
+    coordinateOptions.span.longitudeDelta  = 0.01;
+    coordinateOptions.span.latitudeDelta  = 0.01;
+	[self.mapView setRegion:coordinateOptions animated:YES];
+    
+    [self readJsonFile];
+}
+
+- (void)viewDidUnload {
+	self.mapView = nil;
+	self.customAnnotation = nil;
+	self.defaultAnnotation = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  
+    // TODO: load locations here
+    
+/*
+    int len = [dataArray count];
+    for(int i = 0; i < len; i++) {
+        CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:i];
+    }
+*/
+}
+
+- (void)readJsonFile {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mapdata" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSError *jsonError = nil;
+    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+    
+    if (jsonError != nil) {
+        NSLog(@"ERROR! No data read! %@", [jsonError localizedDescription]);
+    } else {
+        dataArray = [[NSMutableArray alloc] init];
+        
+        NSArray *results = [parsedObject valueForKey:@"locations"];
+        NSLog(@"Count %d", results.count);
+        
+        for (NSDictionary *location in results) {
+            CustomLocation *customLocation = [[CustomLocation alloc] init];
+            
+            for (NSString *key in location) {
+                if ([customLocation respondsToSelector:NSSelectorFromString(key)]) {
+                    [customLocation setValue:[location valueForKey:key] forKey:key];
+                }
+            }
+            
+            [dataArray addObject:customLocation];
+        }
+        
+    }
+}
+
+
+#pragma mark - Map methods
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
 	if (view.annotation == self.customAnnotation || view.annotation == self.customAnnotation2) {
@@ -97,45 +159,6 @@
 	}
 	
 	return nil;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	self.mapView.delegate = self;
-	
-	self.customAnnotation = [[DefaultAnnotation alloc] initWithLatitude:57.393716 andLongitude:21.564763];
-	[self.mapView addAnnotation:self.customAnnotation];
-
-    self.customAnnotation2 = [[DefaultAnnotation alloc] initWithLatitude:57.392271 andLongitude:21.564163];
-	[self.mapView addAnnotation:self.customAnnotation2];
-
-	self.defaultAnnotation = [[DefaultAnnotation alloc] initWithLatitude:57.391635 andLongitude:21.563295];
-	self.defaultAnnotation.title = @"Default Marker";
-	[self.mapView addAnnotation:self.defaultAnnotation];
-	
-	CLLocationCoordinate2D mapCoordinates = {57.392, 21.563295};
-    MKCoordinateRegion coordinateOptions = [self.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(mapCoordinates, 800, 800)];
-    coordinateOptions.span.longitudeDelta  = 0.01;
-    coordinateOptions.span.latitudeDelta  = 0.01;
-	[self.mapView setRegion:coordinateOptions animated:YES];
-}
-
-- (void)viewDidUnload {
-	self.mapView = nil;
-	self.customAnnotation = nil;
-	self.defaultAnnotation = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    
-    dataArray = [[NSMutableArray alloc] init];
-    
-    //TODO: load array data here
-    
-    int len = [dataArray count];
-    for(int i = 0; i < len; i++) {
-        CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:i];
-    }
 }
 
 @end
