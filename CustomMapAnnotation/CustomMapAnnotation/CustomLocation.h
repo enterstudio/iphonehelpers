@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString* phoneNumber;
 @property (nonatomic, retain) NSString* latitude;
 @property (nonatomic, retain) NSString* longitude;
+@property (nonatomic, retain) NSString* locationId;
 
 - (id)initWithJSON:(NSDictionary*)json;
 

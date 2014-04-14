@@ -12,12 +12,13 @@
 @interface DefaultAnnotation : NSObject <MKAnnotation> {
 	CLLocationDegrees _latitude;
 	CLLocationDegrees _longitude;
+    int _locationId;
 	NSString *_title;
 }
 
 @property (nonatomic, retain) NSString *title;
 
-- (id)initWithLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude;
+- (id)initWithLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude andLocationId:(int)locationId;
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 
 @end

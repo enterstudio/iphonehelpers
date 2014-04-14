@@ -21,6 +21,7 @@
         self.phoneNumber = [self stringFromJSONValue:[json objectForKey:@"phoneNumber"]];
         self.latitude = [self stringFromJSONValue:[json objectForKey:@"latitude"]];
         self.longitude = [self stringFromJSONValue:[json objectForKey:@"longitude"]];
+        self.locationId = [self stringFromJSONValue:[json objectForKey:@"locationId"]];
     }
     return self;
 }

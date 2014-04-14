@@ -6,23 +6,26 @@
             "city": "Ventspils, LV-3601, Латвия",
             "phoneNumber": "63620275",
             "latitude": "57.393716",
-            "longitude": "21.564763"
+            "longitude": "21.564763",
+            "locationId": "1"
         },
         {
             "name": "",
             "address": "",
             "city": "Ventspils",
             "phoneNumber": "",
-            "latitude": "",
-            "longitude": ""
+            "latitude": "57.392271",
+            "longitude": "21.564163",
+            "locationId": "2"
         },
         {
             "name": "",
             "address": "",
             "city": "Ventspils",
             "phoneNumber": "",
-            "latitude": "",
-            "longitude": ""
+            "latitude": "57.391635",
+            "longitude": "21.563295",
+            "locationId": "3"
         }
     ]
 }

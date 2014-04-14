@@ -25,14 +25,14 @@
 @synthesize customAnnotation2 = _customAnnotation2;
 @synthesize defaultAnnotation = _defaultAnnotation;
 @synthesize mapView = _mapView;
-@synthesize selectedAnnotationView =_selectedAnnotationView;
-@synthesize customMapAnnotation =_customMapAnnotation;
+@synthesize selectedAnnotationView = _selectedAnnotationView;
+@synthesize customMapAnnotation = _customMapAnnotation;
 @synthesize dataArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.mapView.delegate = self;
-	
+    
 	CLLocationCoordinate2D mapCoordinates = {57.392, 21.563295};
     MKCoordinateRegion coordinateOptions = [self.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(mapCoordinates, 800, 800)];
     coordinateOptions.span.longitudeDelta  = 0.01;
@@ -40,6 +40,13 @@
 	[self.mapView setRegion:coordinateOptions animated:YES];
     
     [self readJsonFile];
+    
+    int len = [dataArray count];
+    for(int i = 0; i < len; i++) {
+        CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:i];
+        DefaultAnnotation *loc = [[DefaultAnnotation alloc] initWithLatitude:[location.latitude doubleValue] andLongitude:[location.longitude doubleValue] andLocationId:[location.locationId intValue]];
+        [self.mapView addAnnotation:loc];
+    }
 }
 
 - (void)viewDidUnload {
@@ -48,17 +55,7 @@
 	self.defaultAnnotation = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-  
-    // TODO: load locations here
-    
-/*
-    int len = [dataArray count];
-    for(int i = 0; i < len; i++) {
-        CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:i];
-    }
-*/
-}
+- (void)viewWillAppear:(BOOL)animated {}
 
 - (void)readJsonFile {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mapdata" ofType:@"json"];
@@ -82,10 +79,8 @@
                     [customLocation setValue:[location valueForKey:key] forKey:key];
                 }
             }
-            
             [dataArray addObject:customLocation];
         }
-        
     }
 }
 
@@ -93,21 +88,18 @@
 #pragma mark - Map methods
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-	if (view.annotation == self.customAnnotation || view.annotation == self.customAnnotation2) {
-		if (self.customMapAnnotation == nil) {
-			self.customMapAnnotation = [[CustomMapAnnotation alloc] initWithLatitude:view.annotation.coordinate.latitude andLongitude:view.annotation.coordinate.longitude];
-        } else {
-			self.customMapAnnotation.latitude = view.annotation.coordinate.latitude;
-			self.customMapAnnotation.longitude = view.annotation.coordinate.longitude;
-		}
-		[self.mapView addAnnotation:self.customMapAnnotation];
-		self.selectedAnnotationView = view;
-	}
+    if (self.customMapAnnotation == nil) {
+        self.customMapAnnotation = [[CustomMapAnnotation alloc] initWithLatitude:view.annotation.coordinate.latitude andLongitude:view.annotation.coordinate.longitude];
+    } else {
+        self.customMapAnnotation.latitude = view.annotation.coordinate.latitude;
+        self.customMapAnnotation.longitude = view.annotation.coordinate.longitude;
+    }
+    [self.mapView addAnnotation:self.customMapAnnotation];
+    self.selectedAnnotationView = view;
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-	if (self.customMapAnnotation &&
-        (view.annotation == self.customAnnotation || view.annotation == self.customAnnotation2)) {
+	if (self.customMapAnnotation ) {
 		[self.mapView removeAnnotation: self.customMapAnnotation];
 	}
 }
@@ -120,7 +112,7 @@
             
             UIView *customDisplayView = [[UIView alloc] init];
             
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 74, 74)];
+/*            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 74, 74)];
             imageView.image = [UIImage imageNamed:@"me.png"];
             UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 0, 150, 20)];
             nameLabel.text = @"Lota";
@@ -140,31 +132,19 @@
             [customDisplayView addSubview:streetLabel];
             [customDisplayView addSubview:cityLabel];
             [customDisplayView addSubview:phoneLabel];
-
+*/
             [customMapAnnotationView.contentView addSubview:customDisplayView];
 		}
 		customMapAnnotationView.parentAnnotationView = self.selectedAnnotationView;
 		customMapAnnotationView.mapView = self.mapView;
 		return customMapAnnotationView;
-	} else if (annotation == self.customAnnotation) {
+	} else {
 		MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomAnnotation"];
 		annotationView.canShowCallout = NO;
-		annotationView.pinColor = MKPinAnnotationColorGreen;
-		return annotationView;
-	} else if (annotation == self.defaultAnnotation) {
-		MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"NormalAnnotation"];
-		annotationView.canShowCallout = YES;
-		annotationView.pinColor = MKPinAnnotationColorPurple;
-		return annotationView;
-	}
-	
+		annotationView.pinColor = MKPinAnnotationColorRed;
+ 		return annotationView;
+    }
 	return nil;
 }
 
 @end
-
-/*
- CLLocationCoordinate2D defaultCoordinates = {57.391635,21.563295};
- CLLocationCoordinate2D customCoordinates = {57.393716, 21.564763};
- CLLocationCoordinate2D customCoordinates2 = {57.392271, 21.564163};
-*/

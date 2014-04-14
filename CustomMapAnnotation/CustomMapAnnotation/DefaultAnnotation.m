@@ -12,6 +12,7 @@
 
 @property (nonatomic) CLLocationDegrees latitude;
 @property (nonatomic) CLLocationDegrees longitude;
+@property (nonatomic) int locationId;
 
 @end
 
@@ -20,12 +21,15 @@
 @synthesize latitude = _latitude;
 @synthesize longitude = _longitude;
 @synthesize title = _title;
+@synthesize locationId = _locationId;
 
 - (id)initWithLatitude:(CLLocationDegrees)latitude
-		  andLongitude:(CLLocationDegrees)longitude {
+		  andLongitude:(CLLocationDegrees)longitude
+         andLocationId:(int)locationId {
 	if (self = [super init]) {
 		self.latitude = latitude;
 		self.longitude = longitude;
+        self.locationId = locationId;
 	}
 	return self;
 }
