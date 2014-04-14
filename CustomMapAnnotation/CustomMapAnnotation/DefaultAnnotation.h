@@ -16,9 +16,9 @@
 	NSString *_title;
 }
 
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
-- (id)initWithLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude andLocationId:(int)locationId;
+- (id)initWithLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude andLocationId:(NSString *)locationId;
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 
 @end

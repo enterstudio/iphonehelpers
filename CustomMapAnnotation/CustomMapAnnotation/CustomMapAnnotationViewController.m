@@ -44,7 +44,7 @@
     int len = [dataArray count];
     for(int i = 0; i < len; i++) {
         CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:i];
-        DefaultAnnotation *loc = [[DefaultAnnotation alloc] initWithLatitude:[location.latitude doubleValue] andLongitude:[location.longitude doubleValue] andLocationId:[location.locationId intValue]];
+        DefaultAnnotation *loc = [[DefaultAnnotation alloc] initWithLatitude:[location.latitude doubleValue] andLongitude:[location.longitude doubleValue] andLocationId:location.locationId];
         [self.mapView addAnnotation:loc];
     }
 }
@@ -89,11 +89,15 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     if (self.customMapAnnotation == nil) {
-        self.customMapAnnotation = [[CustomMapAnnotation alloc] initWithLatitude:view.annotation.coordinate.latitude andLongitude:view.annotation.coordinate.longitude];
+        self.customMapAnnotation = [[CustomMapAnnotation alloc] initWithLatitude:view.annotation.coordinate.latitude andLongitude:view.annotation.coordinate.longitude andLocationId:view.annotation.title];
     } else {
         self.customMapAnnotation.latitude = view.annotation.coordinate.latitude;
         self.customMapAnnotation.longitude = view.annotation.coordinate.longitude;
+        self.customMapAnnotation.title = view.annotation.title;
     }
+    
+    // TODO: add locations here!!!
+    
     [self.mapView addAnnotation:self.customMapAnnotation];
     self.selectedAnnotationView = view;
 }
@@ -112,28 +116,36 @@
             
             UIView *customDisplayView = [[UIView alloc] init];
             
-/*            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 74, 74)];
-            imageView.image = [UIImage imageNamed:@"me.png"];
+            CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:([annotation.title intValue] - 1)];
+            
             UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 0, 150, 20)];
-            nameLabel.text = @"Lota";
+            nameLabel.text = location.name;
             nameLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:17];
+            
             UILabel *streetLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 20, 150, 20)];
-            streetLabel.text = @"Raiņa iela 5";
+            streetLabel.text = location.address;
             streetLabel.font = [UIFont fontWithName:@"Verdana" size:13];
+
             UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 40, 150, 20)];
-            cityLabel.text = @"Ventspils, LV-3601, Латвия";
+            cityLabel.text = location.city;
             cityLabel.font = [UIFont fontWithName:@"Verdana" size:13];
+
             UILabel *phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 60, 150, 20)];
-            phoneLabel.text = @"63620275";
+            phoneLabel.text = location.phoneNumber;
             phoneLabel.font = [UIFont fontWithName:@"Verdana" size:13];
             phoneLabel.textColor = [UIColor blueColor];
+            
+/*            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 74, 74)];
+            imageView.image = [UIImage imageNamed:@"me.png"];
+
             [customDisplayView addSubview:imageView];
+ */
             [customDisplayView addSubview:nameLabel];
             [customDisplayView addSubview:streetLabel];
             [customDisplayView addSubview:cityLabel];
             [customDisplayView addSubview:phoneLabel];
-*/
             [customMapAnnotationView.contentView addSubview:customDisplayView];
+            
 		}
 		customMapAnnotationView.parentAnnotationView = self.selectedAnnotationView;
 		customMapAnnotationView.mapView = self.mapView;

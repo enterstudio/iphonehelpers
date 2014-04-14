@@ -14,10 +14,11 @@
 	CLLocationDegrees _longitude;
 }
 
+@property (nonatomic, copy) NSString *title;
+
 @property (nonatomic) CLLocationDegrees latitude;
 @property (nonatomic) CLLocationDegrees longitude;
 
-- (id)initWithLatitude:(CLLocationDegrees)latitude
-		  andLongitude:(CLLocationDegrees)longitude;
+- (id)initWithLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude andLocationId:(NSString *)locationId;
 
 @end
