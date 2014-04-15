@@ -16,12 +16,11 @@
         self.name = [self stringFromJSONValue:[json objectForKey:@"locationName"]];
         self.address = [self stringFromJSONValue:[json objectForKey:@"address"]];
         self.city = [self stringFromJSONValue:[json objectForKey:@"city"]];
-        self.state = [self stringFromJSONValue:[json objectForKey:@"state"]];
-        self.zipcode = [self stringFromJSONValue:[json objectForKey:@"zipcode"]];
         self.phoneNumber = [self stringFromJSONValue:[json objectForKey:@"phoneNumber"]];
         self.latitude = [self stringFromJSONValue:[json objectForKey:@"latitude"]];
         self.longitude = [self stringFromJSONValue:[json objectForKey:@"longitude"]];
         self.locationId = [self stringFromJSONValue:[json objectForKey:@"locationId"]];
+        self.imageName = [self stringFromJSONValue:[json objectForKey:@"imageName"]];
     }
     return self;
 }

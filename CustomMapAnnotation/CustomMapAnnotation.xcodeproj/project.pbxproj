@@ -11,6 +11,10 @@
 		6F01B5C218ABF61300EB1823 /* me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F01B5C018ABF61300EB1823 /* me@2x.png */; };
 		6F25C38C18FC1A5C00B058F6 /* mapdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F25C38B18FC1A5C00B058F6 /* mapdata.json */; };
 		6F6AF21318F5DC99006293BD /* CustomLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6AF21218F5DC99006293BD /* CustomLocation.m */; };
+		6FB755EF18FDA97800964BC5 /* me1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB755EB18FDA97800964BC5 /* me1.png */; };
+		6FB755F018FDA97800964BC5 /* me1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB755EC18FDA97800964BC5 /* me1@2x.png */; };
+		6FB755F118FDA97800964BC5 /* me2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB755ED18FDA97800964BC5 /* me2.png */; };
+		6FB755F218FDA97800964BC5 /* me2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB755EE18FDA97800964BC5 /* me2@2x.png */; };
 		6FCF102618AA84AE00A53C5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102518AA84AE00A53C5E /* Foundation.framework */; };
 		6FCF102818AA84AE00A53C5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102718AA84AE00A53C5E /* CoreGraphics.framework */; };
 		6FCF102A18AA84AE00A53C5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCF102918AA84AE00A53C5E /* UIKit.framework */; };
@@ -46,6 +50,10 @@
 		6F25C38B18FC1A5C00B058F6 /* mapdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mapdata.json; sourceTree = "<group>"; };
 		6F6AF21118F5DC99006293BD /* CustomLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLocation.h; sourceTree = "<group>"; };
 		6F6AF21218F5DC99006293BD /* CustomLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLocation.m; sourceTree = "<group>"; };
+		6FB755EB18FDA97800964BC5 /* me1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me1.png; sourceTree = "<group>"; };
+		6FB755EC18FDA97800964BC5 /* me1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me1@2x.png"; sourceTree = "<group>"; };
+		6FB755ED18FDA97800964BC5 /* me2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me2.png; sourceTree = "<group>"; };
+		6FB755EE18FDA97800964BC5 /* me2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me2@2x.png"; sourceTree = "<group>"; };
 		6FCF102218AA84AE00A53C5E /* CustomMapAnnotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomMapAnnotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FCF102518AA84AE00A53C5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6FCF102718AA84AE00A53C5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +107,10 @@
 		6F01B5BE18ABF5B300EB1823 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6FB755EB18FDA97800964BC5 /* me1.png */,
+				6FB755EC18FDA97800964BC5 /* me1@2x.png */,
+				6FB755ED18FDA97800964BC5 /* me2.png */,
+				6FB755EE18FDA97800964BC5 /* me2@2x.png */,
 				6FDE494F18AC120D0039D1C1 /* mapit.png */,
 				6FDE495018AC120D0039D1C1 /* mapit@2x.png */,
 				6F01B5BF18ABF61300EB1823 /* me.png */,
@@ -264,11 +276,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FCF106C18AA92BB00A53C5E /* CustomMapAnnotationViewController.xib in Resources */,
+				6FB755F118FDA97800964BC5 /* me2.png in Resources */,
 				6FCF103E18AA84AE00A53C5E /* Images.xcassets in Resources */,
+				6FB755F218FDA97800964BC5 /* me2@2x.png in Resources */,
 				6FCF103018AA84AE00A53C5E /* InfoPlist.strings in Resources */,
 				6FDE495218AC120D0039D1C1 /* mapit@2x.png in Resources */,
+				6FB755F018FDA97800964BC5 /* me1@2x.png in Resources */,
 				6F25C38C18FC1A5C00B058F6 /* mapdata.json in Resources */,
 				6FDE495118AC120D0039D1C1 /* mapit.png in Resources */,
+				6FB755EF18FDA97800964BC5 /* me1.png in Resources */,
 				6F01B5C118ABF61300EB1823 /* me.png in Resources */,
 				6F01B5C218ABF61300EB1823 /* me@2x.png in Resources */,
 			);

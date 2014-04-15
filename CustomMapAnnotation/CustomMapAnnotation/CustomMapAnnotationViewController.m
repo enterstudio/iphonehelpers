@@ -13,9 +13,6 @@
 #import "CustomLocation.h"
 
 @interface CustomMapAnnotationViewController ()
-@property (nonatomic, retain) DefaultAnnotation *customAnnotation;
-@property (nonatomic, retain) DefaultAnnotation *customAnnotation2;
-@property (nonatomic, retain) DefaultAnnotation *defaultAnnotation;
 @property (nonatomic, retain) CustomMapAnnotation *customMapAnnotation;
 @property (nonatomic, retain) CustomLocation *location;
 
@@ -23,15 +20,14 @@
 @property (nonatomic, retain) UILabel *streetLabel;
 @property (nonatomic, retain) UILabel *cityLabel;
 @property (nonatomic, retain) UILabel *phoneLabel;
+@property (nonatomic, retain) UIImageView *photoView;
+@property (nonatomic, retain) UIImageView *mapItView;
 @property (nonatomic, retain) UIView *customDisplayView;
 
 @end
 
 @implementation CustomMapAnnotationViewController
 
-@synthesize customAnnotation = _customAnnotation;
-@synthesize customAnnotation2 = _customAnnotation2;
-@synthesize defaultAnnotation = _defaultAnnotation;
 @synthesize mapView = _mapView;
 @synthesize selectedAnnotationView = _selectedAnnotationView;
 @synthesize customMapAnnotation = _customMapAnnotation;
@@ -42,6 +38,8 @@
 @synthesize streetLabel = _streetLabel;
 @synthesize cityLabel = _cityLabel;
 @synthesize phoneLabel = _phoneLabel;
+@synthesize photoView = _photoView;
+@synthesize mapItView = _mapItView;
 @synthesize customDisplayView = _customDisplayView;
 
 - (void)viewDidLoad {
@@ -66,8 +64,6 @@
 
 - (void)viewDidUnload {
 	self.mapView = nil;
-	self.customAnnotation = nil;
-	self.defaultAnnotation = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {}
@@ -100,24 +96,31 @@
 }
 
 - (void)createCustomOverlay {
-    _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 0, 150, 20)];
+    _photoView= [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 74, 74)];
+    
+    _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(83, 0, 190, 20)];
     _nameLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:17];
     
-    _streetLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 20, 150, 20)];
+    _streetLabel = [[UILabel alloc] initWithFrame:CGRectMake(83, 20, 190, 20)];
     _streetLabel.font = [UIFont fontWithName:@"Verdana" size:13];
     
-    _cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 40, 150, 20)];
+    _cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(83, 40, 190, 20)];
     _cityLabel.font = [UIFont fontWithName:@"Verdana" size:13];
     
-    _phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 60, 150, 20)];
+    _phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(83, 60, 190, 20)];
     _phoneLabel.font = [UIFont fontWithName:@"Verdana" size:13];
     _phoneLabel.textColor = [UIColor blueColor];
     
+    _mapItView = [[UIImageView alloc] initWithFrame:CGRectMake(270, 30, 24, 24)];
+    _mapItView.image = [UIImage imageNamed:@"mapit.png"];
+
     _customDisplayView = [[UIView alloc] init];
+    [_customDisplayView addSubview:_photoView];
     [_customDisplayView addSubview:_nameLabel];
     [_customDisplayView addSubview:_streetLabel];
     [_customDisplayView addSubview:_cityLabel];
     [_customDisplayView addSubview:_phoneLabel];
+    [_customDisplayView addSubview:_mapItView];
 }
 
 
@@ -149,16 +152,11 @@
 		CustomMapAnnotationView *customMapAnnotationView = (CustomMapAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"CalloutAnnotation"];
         if (!customMapAnnotationView) {
 			customMapAnnotationView = [[CustomMapAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CalloutAnnotation"];
-            
-/*            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 74, 74)];
-            imageView.image = [UIImage imageNamed:@"me.png"];
-
-            [customDisplayView addSubview:imageView];
- */
-		}
+        }
         
         [_customDisplayView removeFromSuperview];
         [self createCustomOverlay];
+        _photoView.image = [UIImage imageNamed:_location.imageName];
         _nameLabel.text = _location.name;
         _streetLabel.text = _location.address;
         _cityLabel.text = _location.city;

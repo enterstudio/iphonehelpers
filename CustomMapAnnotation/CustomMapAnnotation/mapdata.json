@@ -7,7 +7,8 @@
             "phoneNumber": "63620275",
             "latitude": "57.393716",
             "longitude": "21.564763",
-            "locationId": "1"
+            "locationId": "1",
+            "imageName": "me.png"
         },
         {
             "name": "Cents",
@@ -16,7 +17,8 @@
             "phoneNumber": "",
             "latitude": "57.392271",
             "longitude": "21.564163",
-            "locationId": "2"
+            "locationId": "2",
+            "imageName": "me1.png"
         },
         {
             "name": "Liedags",
@@ -25,7 +27,8 @@
             "phoneNumber": "",
             "latitude": "57.391635",
             "longitude": "21.563295",
-            "locationId": "3"
+            "locationId": "3",
+            "imageName": "me2.png"
         }
     ]
 }
