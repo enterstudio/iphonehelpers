@@ -132,11 +132,7 @@
         self.customMapAnnotation.title = view.annotation.title;
     }
     
-    CustomLocation *customLocation = (CustomLocation *)[dataArray objectAtIndex:([view.annotation.title intValue] - 1)];
-    _location.name = customLocation.name;
-    _location.address = customLocation.address;
-    _location.city = customLocation.city;
-    _location.phoneNumber = customLocation.phoneNumber;
+    _location = (CustomLocation *)[dataArray objectAtIndex:([view.annotation.title intValue] - 1)];
     
     [self.mapView addAnnotation:self.customMapAnnotation];
     self.selectedAnnotationView = view;
