@@ -17,6 +17,14 @@
 @property (nonatomic, retain) DefaultAnnotation *customAnnotation2;
 @property (nonatomic, retain) DefaultAnnotation *defaultAnnotation;
 @property (nonatomic, retain) CustomMapAnnotation *customMapAnnotation;
+@property (nonatomic, retain) CustomLocation *location;
+
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UILabel *streetLabel;
+@property (nonatomic, retain) UILabel *cityLabel;
+@property (nonatomic, retain) UILabel *phoneLabel;
+@property (nonatomic, retain) UIView *customDisplayView;
+
 @end
 
 @implementation CustomMapAnnotationViewController
@@ -28,6 +36,13 @@
 @synthesize selectedAnnotationView = _selectedAnnotationView;
 @synthesize customMapAnnotation = _customMapAnnotation;
 @synthesize dataArray;
+@synthesize location = _location;
+
+@synthesize nameLabel = _nameLabel;
+@synthesize streetLabel = _streetLabel;
+@synthesize cityLabel = _cityLabel;
+@synthesize phoneLabel = _phoneLabel;
+@synthesize customDisplayView = _customDisplayView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,8 +58,8 @@
     
     int len = [dataArray count];
     for(int i = 0; i < len; i++) {
-        CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:i];
-        DefaultAnnotation *loc = [[DefaultAnnotation alloc] initWithLatitude:[location.latitude doubleValue] andLongitude:[location.longitude doubleValue] andLocationId:location.locationId];
+        _location = (CustomLocation *)[dataArray objectAtIndex:i];
+        DefaultAnnotation *loc = [[DefaultAnnotation alloc] initWithLatitude:[_location.latitude doubleValue] andLongitude:[_location.longitude doubleValue] andLocationId:_location.locationId];
         [self.mapView addAnnotation:loc];
     }
 }
@@ -72,16 +87,37 @@
         NSLog(@"Count %d", results.count);
         
         for (NSDictionary *location in results) {
-            CustomLocation *customLocation = [[CustomLocation alloc] init];
+            _location = [[CustomLocation alloc] init];
             
             for (NSString *key in location) {
-                if ([customLocation respondsToSelector:NSSelectorFromString(key)]) {
-                    [customLocation setValue:[location valueForKey:key] forKey:key];
+                if ([_location respondsToSelector:NSSelectorFromString(key)]) {
+                    [_location setValue:[location valueForKey:key] forKey:key];
                 }
             }
-            [dataArray addObject:customLocation];
+            [dataArray addObject:_location];
         }
     }
+}
+
+- (void)createCustomOverlay {
+    _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 0, 150, 20)];
+    _nameLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:17];
+    
+    _streetLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 20, 150, 20)];
+    _streetLabel.font = [UIFont fontWithName:@"Verdana" size:13];
+    
+    _cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 40, 150, 20)];
+    _cityLabel.font = [UIFont fontWithName:@"Verdana" size:13];
+    
+    _phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 60, 150, 20)];
+    _phoneLabel.font = [UIFont fontWithName:@"Verdana" size:13];
+    _phoneLabel.textColor = [UIColor blueColor];
+    
+    _customDisplayView = [[UIView alloc] init];
+    [_customDisplayView addSubview:_nameLabel];
+    [_customDisplayView addSubview:_streetLabel];
+    [_customDisplayView addSubview:_cityLabel];
+    [_customDisplayView addSubview:_phoneLabel];
 }
 
 
@@ -96,7 +132,11 @@
         self.customMapAnnotation.title = view.annotation.title;
     }
     
-    // TODO: add locations here!!!
+    CustomLocation *customLocation = (CustomLocation *)[dataArray objectAtIndex:([view.annotation.title intValue] - 1)];
+    _location.name = customLocation.name;
+    _location.address = customLocation.address;
+    _location.city = customLocation.city;
+    _location.phoneNumber = customLocation.phoneNumber;
     
     [self.mapView addAnnotation:self.customMapAnnotation];
     self.selectedAnnotationView = view;
@@ -111,43 +151,26 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
 	if (annotation == self.customMapAnnotation) {
 		CustomMapAnnotationView *customMapAnnotationView = (CustomMapAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"CalloutAnnotation"];
-		if (!customMapAnnotationView) {
+        if (!customMapAnnotationView) {
 			customMapAnnotationView = [[CustomMapAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CalloutAnnotation"];
-            
-            UIView *customDisplayView = [[UIView alloc] init];
-            
-            CustomLocation *location = (CustomLocation *)[dataArray objectAtIndex:([annotation.title intValue] - 1)];
-            
-            UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 0, 150, 20)];
-            nameLabel.text = location.name;
-            nameLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:17];
-            
-            UILabel *streetLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 20, 150, 20)];
-            streetLabel.text = location.address;
-            streetLabel.font = [UIFont fontWithName:@"Verdana" size:13];
-
-            UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 40, 150, 20)];
-            cityLabel.text = location.city;
-            cityLabel.font = [UIFont fontWithName:@"Verdana" size:13];
-
-            UILabel *phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 60, 150, 20)];
-            phoneLabel.text = location.phoneNumber;
-            phoneLabel.font = [UIFont fontWithName:@"Verdana" size:13];
-            phoneLabel.textColor = [UIColor blueColor];
             
 /*            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, 74, 74)];
             imageView.image = [UIImage imageNamed:@"me.png"];
 
             [customDisplayView addSubview:imageView];
  */
-            [customDisplayView addSubview:nameLabel];
-            [customDisplayView addSubview:streetLabel];
-            [customDisplayView addSubview:cityLabel];
-            [customDisplayView addSubview:phoneLabel];
-            [customMapAnnotationView.contentView addSubview:customDisplayView];
-            
 		}
-		customMapAnnotationView.parentAnnotationView = self.selectedAnnotationView;
+        
+        [_customDisplayView removeFromSuperview];
+        [self createCustomOverlay];
+        _nameLabel.text = _location.name;
+        _streetLabel.text = _location.address;
+        _cityLabel.text = _location.city;
+        _phoneLabel.text = _location.phoneNumber;
+        
+        [customMapAnnotationView.contentView addSubview:_customDisplayView];
+      
+        customMapAnnotationView.parentAnnotationView = self.selectedAnnotationView;
 		customMapAnnotationView.mapView = self.mapView;
 		return customMapAnnotationView;
 	} else {
